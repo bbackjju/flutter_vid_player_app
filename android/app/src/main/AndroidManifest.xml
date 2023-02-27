@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vid_player_app">
+    <uses_permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>>
    <application
         android:label="vid_player_app"
         android:name="${applicationName}"
