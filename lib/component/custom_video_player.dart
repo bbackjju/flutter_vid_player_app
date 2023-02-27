@@ -16,11 +16,24 @@ class CustomVideoPlayer extends StatefulWidget {
 
 class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
   VideoPlayerController? videoController;
+  
   @override
   void initState(){
     super.initState();
 
     initializeController();
+  }
+
+  initializeController() async {
+    final videoController = VideoPlayerController.file(
+      File(widget.video.path),
+    );
+
+    await videoController.initialize();
+
+    setState(() {
+      this.videoController = videoController;
+    });
   }
   @override
   Widget build(BuildContext context) {
